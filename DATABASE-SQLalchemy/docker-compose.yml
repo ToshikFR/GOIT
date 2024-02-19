@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    build: .
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: univ.db
+
+volumes:
+  postgres-data:
